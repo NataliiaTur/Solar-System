@@ -85,4 +85,55 @@ li::after {
 }
 
 .mars {
-  --b: radial-gradient(circle, #e57373
+  --b: radial-gradient(circle, #e57373 0%, #af4448 100%);
+  --d: 45cqi;
+  --t: 8421.05ms;
+  --w: 3.7105cqi;
+}
+
+.jupiter {
+  --b: radial-gradient(circle, #d4a373 0%, #b36d32 50%, #f4e7d3 100%);
+  --d: 60cqi;
+  --t: 12631.58ms;
+  --w: 4.8158cqi;
+}
+
+.saturn {
+  --b: radial-gradient(circle, #e6dba0 0%, #c2a13e 100%);
+  --d: 75cqi;
+  --t: 14736.84ms;
+  --w: 5.3684cqi;
+}
+
+.uranus {
+  --b: radial-gradient(circle, #7de3f4 0%, #3ba0b5 100%);
+  --d: 84.5cqi;
+  --t: 10526.32ms;
+  --w: 4.2632cqi;
+}
+
+.neptune {
+  --b: radial-gradient(circle, #4c6ef5 0%, #1b3b8c 100%);
+  --d: 94cqi;
+  --t: 20000ms;
+  --w: 6cqi;
+}
+
+/* ✅ Media query for small screens */
+@media (max-width: 400px) {
+  .sun {
+    --d: 8cqi;
+    --w: 6cqi;
+  }
+
+  .mercury,
+  .venus,
+  .earth,
+  .mars,
+  .jupiter,
+  .saturn,
+  .uranus,
+  .neptune {
+    --w: calc(var(--w) * 0.8);
+  }
+}
