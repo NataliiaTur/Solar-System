@@ -1,8 +1,18 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   background: #000f;
   color: #fffa;
   margin: 0;
   width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 ol {
@@ -11,6 +21,7 @@ ol {
   container-type: inline-size;
   display: grid;
   width: 100%;
+  max-width: 100vmin;
 }
 
 li {
@@ -21,17 +32,17 @@ li {
   grid-area: 1 / 1;
   place-self: center;
   width: var(--d, 2cqi);
-  &::after {
-    animation: rotate var(--t, 3s) linear infinite;
-    aspect-ratio: 1 / 1;
-    background: var(--b, hsl(0, 0%, 50%));
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    content: "";
-    display: block;
-    offset-path: content-box;
-    width: var(--w, 2cqi);
-  }
+}
+li::after {
+  animation: rotate var(--t, 3s) linear infinite;
+  aspect-ratio: 1 / 1;
+  background: var(--b, hsl(0, 0%, 50%));
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  content: "";
+  display: block;
+  offset-path: content-box;
+  width: var(--w, 2cqi);
 }
 
 @keyframes rotate {
@@ -45,11 +56,11 @@ li {
   --d: 10cqi;
   --w: 8cqi;
   border: 0;
-  &::after {
-    animation: none;
-    offset-path: none;
-    place-self: center;
-  }
+}
+.sun::after {
+  animation: none;
+  offset-path: none;
+  place-self: center;
 }
 
 .mercury {
@@ -74,36 +85,4 @@ li {
 }
 
 .mars {
-  --b: radial-gradient(circle, #e57373 0%, #af4448 100%);
-  --d: 45cqi;
-  --t: 8421.05ms;
-  --w: 3.7105cqi;
-}
-
-.jupiter {
-  --b: radial-gradient(circle, #d4a373 0%, #b36d32 50%, #f4e7d3 100%);
-  --d: 60cqi;
-  --t: 12631.58ms;
-  --w: 4.8158cqi;
-}
-
-.saturn {
-  --b: radial-gradient(circle, #e6dba0 0%, #c2a13e 100%);
-  --d: 75cqi;
-  --t: 14736.84ms;
-  --w: 5.3684cqi;
-}
-
-.uranus {
-  --b: radial-gradient(circle, #7de3f4 0%, #3ba0b5 100%);
-  --d: 84.5cqi;
-  --t: 10526.32ms;
-  --w: 4.2632cqi;
-}
-
-.neptune {
-  --b: radial-gradient(circle, #4c6ef5 0%, #1b3b8c 100%);
-  --d: 94cqi;
-  --t: 20000ms;
-  --w: 6cqi;
-}
+  --b: radial-gradient(circle, #e57373
